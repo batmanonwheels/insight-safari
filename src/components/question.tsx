@@ -1,4 +1,5 @@
 import { randomPhoto } from "@/lib/randomPhoto";
+import Image from "next/image";
 
 type QuestionProps = {
   text: string;
@@ -15,7 +16,9 @@ export const Question = ({ text }: QuestionProps) => {
         <h2 className="m-auto">{text}</h2>
       </div>
       <div className="absolute left-0 bottom-0 w-screen flex items-center justify-around p-4 text-6xl ">
-        <img
+        <Image
+          height={1000}
+          width={1000}
           src={"/svg/line.svg"}
           alt={"Arrow pointing to the left"}
           className="w-3/4"

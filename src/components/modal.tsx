@@ -1,12 +1,6 @@
-"use client";
-
-import { useRouter, useSearchParams } from "next/navigation";
 import { ModalToggleOff } from "./modal-toggle";
 
 export const Modal = ({ children }: { children: React.ReactNode }) => {
-  const router = useRouter();
-  const searchParams = useSearchParams();
-
   return (
     <dialog
       id="legal"

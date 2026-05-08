@@ -1,5 +1,4 @@
 import { randomPhoto } from "@/lib/randomPhoto";
-import Link from "next/link";
 import { ModalToggleOn } from "./modal-toggle";
 
 type ExplainedProps = {
