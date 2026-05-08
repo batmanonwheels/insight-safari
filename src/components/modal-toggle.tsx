@@ -27,7 +27,7 @@ export const ModalToggleOff = () => {
     <button
       type="button"
       onClick={() => closeModal()}
-      className="text-3xl p-2 outline outline-offset-1 rounded-lg"
+      className="text-2xl p-2 outline outline-offset-1 rounded-lg"
     >
       Close
     </button>
