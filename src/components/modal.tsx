@@ -8,7 +8,9 @@ export const Modal = ({ children }: { children: React.ReactNode }) => {
       closedby="any"
       open={false}
     >
-      <div className={`flex flex-col gap-4 items-center justify-between`}>
+      <div
+        className={`flex flex-col gap-4 items-center justify-between overflow-hidden`}
+      >
         {children}
         <ModalToggleOff />
       </div>
