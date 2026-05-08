@@ -10,7 +10,7 @@ export const ModalToggleOn = () => {
     <button
       type="button"
       onClick={() => openModal()}
-      className="absolute bottom-16 text-3xl p-6 bg-green-800 rounded-lg outline-10 outline-offset-10 opacity-70"
+      className="absolute bottom-16 text-3xl p-6 bg-green-800 rounded-lg outline-10 outline-offset-10 active:outline-white"
     >
       Disclaimer
     </button>

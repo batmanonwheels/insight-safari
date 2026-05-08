@@ -18,7 +18,7 @@ export const Explained = ({ text }: ExplainedProps) => {
         width={1080}
         src="/backgrounds/ferns-1.webp"
         alt=""
-        className="absolute top-0 bottom-0 -z-30 object-cover bg-green-800"
+        className="absolute top-0 bottom-0 w-full -z-30 object-cover bg-green-800"
       />
       <div className="w-3/4 flex flex-col items-center  justify-center bg-green-800 text-5xl font-bold p-15 rounded-lg outline-10 outline-offset-10">
         <h2 className="m-auto">{text}</h2>
