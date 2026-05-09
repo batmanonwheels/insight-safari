@@ -12,7 +12,7 @@ export const Explained = ({ text, title }: ExplainedProps) => {
 
   return (
     <section
-      className={`relative min-h-screen min-w-screen flex flex-col items-center justify-center gap-80 snap-center snap-always text-white outline-offset-4 font-gloriola`}
+      className={`relative min-h-screen min-w-screen flex flex-col items-center justify-center gap-80 snap-center snap-always text-white outline-offset-4 `}
     >
       <Image
         height={1920}

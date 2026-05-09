@@ -16,7 +16,7 @@ export const Container = ({
   explainedTitle,
 }: ContainerProps) => {
   return (
-    <main className="flex h-dvh w-dvw max-w-dvw max-h-dvh overflow-x-scroll snap-x snap-mandatory ">
+    <main className="flex h-dvh w-dvw max-w-dvw max-h-dvh overflow-x-scroll snap-x snap-mandatory font font-gloriola">
       <Timer />
       {questions.map((q, i) => {
         return <Question text={q} key={i + q} />;
