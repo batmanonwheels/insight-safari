@@ -6,11 +6,19 @@ export const metadata: Metadata = {
 };
 
 export default function PlatformSupport() {
-  const questions: string[] = [""];
-  const explained: string[] = [""];
-  const legal: string[] = [""];
+  const questions: string[] = [
+    "How do I log in?",
+    "Can I see all my accounts in one place?",
+  ];
+  const explained: string[] = [
+    "How-to guides, videos, navigation support, live webinars, and even company-specific sessions make managing accounts simple.",
+  ];
 
   return (
-    <Container questions={questions} explained={explained} legal={legal} />
+    <Container
+      questions={questions}
+      explained={explained}
+      explainedTitle={"KNOW THE TOOLS. USE THEM WELL."}
+    />
   );
 }

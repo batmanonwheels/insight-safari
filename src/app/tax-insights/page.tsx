@@ -6,11 +6,19 @@ export const metadata: Metadata = {
 };
 
 export default function TaxInsights() {
-  const questions: string[] = [""];
-  const explained: string[] = [""];
-  const legal: string[] = [""];
+  const questions: string[] = [
+    "Will I owe taxes when my RSUs vest?",
+    "What are my tax obligations when I transfer or gift shares?",
+  ];
+  const explained: string[] = [
+    "Employees can access practical education on capital gains, withholding, and tax timing.",
+  ];
 
   return (
-    <Container questions={questions} explained={explained} legal={legal} />
+    <Container
+      questions={questions}
+      explained={explained}
+      explainedTitle={"ESSENTIAL TAX KNOWLEDGE."}
+    />
   );
 }

@@ -1,4 +1,4 @@
 export const randomPhoto = (): string => {
-	const photos = ['bg-ferns-1', 'bg-ferns-2', 'bg-ferns-3', 'bg-ferns-4'];
+	const photos = ['/backgrounds/ferns-1.webp', '/backgrounds/ferns-2.webp'];
 	return photos[Math.floor(Math.random() * photos.length)];
 };
