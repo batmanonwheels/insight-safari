@@ -19,7 +19,7 @@ export const Question = ({ text }: QuestionProps) => {
         alt=""
         className="absolute top-0 bottom-0 w-full h-full -z-30 object-cover bg-[#0C7158]"
       />
-      <div className="w-3/4 flex flex-col items-center justify-center bg-[#0C7158] text-white p-15 rounded-2xl outline-10 outline-offset-10">
+      <div className="w-3/4 flex flex-col font-bold items-center justify-center bg-[#0C7158] text-white p-15 rounded-2xl outline-10 outline-offset-10">
         <h2 className="m-auto">{text}</h2>
       </div>
       <div className="absolute left-0 bottom-0 w-screen flex items-center justify-around p-4 opacity-60">
