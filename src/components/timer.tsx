@@ -3,7 +3,7 @@
 
 import { useEffect } from "react";
 
-export const Timer = ({ seconds = 5 }) => {
+export const Timer = ({ seconds = 15 }) => {
   useEffect(() => {
     let timeoutId: NodeJS.Timeout;
 

@@ -6,11 +6,23 @@ export const metadata: Metadata = {
 };
 
 export default function Communications() {
-  const questions: string[] = [""];
-  const explained: string[] = [""];
-  const legal: string[] = [""];
+  const questions: string[] = [
+    "Where do I find my tax documents?",
+    "When can I exercise my options?",
+    "How many shares are vesting in my next vest?",
+    "What are the options for my proceeds?",
+  ];
+  const explained: string[] = [
+    "Answer employee questions by offering timely communications at grant, vest and other key plan moments, plus practical steps.",
+  ];
 
   return (
-    <Container questions={questions} explained={explained} legal={legal} />
+    <Container
+      questions={questions}
+      explained={explained}
+      explainedTitle={
+        "OUTREACH DURING KEY MOMENTS OR FEATURING TARGETED FINANCIAL STRATEGIES."
+      }
+    />
   );
 }
