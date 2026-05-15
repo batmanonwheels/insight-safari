@@ -12,8 +12,9 @@ export default function Home() {
       <Image
         height={1080}
         width={1920}
-        src="/backgrounds/ferns-1.webp"
+        src={bg}
         alt=""
+        loading="eager"
         className="absolute top-0 bottom-0 w-full h-full -z-30 object-cover bg-[#0C7158]"
       />
       <h1 className="text-7xl p-2">INSIGHT SAFARI</h1>
