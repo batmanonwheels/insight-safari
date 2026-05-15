@@ -7,6 +7,10 @@ export const Timer = ({ seconds = 15 }) => {
   useEffect(() => {
     let timeoutId: NodeJS.Timeout;
 
+    const top: HTMLElement | null = document.querySelector("#top");
+
+    if (!top) return;
+
     const resetTimer = () => {
       if (timeoutId) clearTimeout(timeoutId);
 
@@ -33,7 +37,15 @@ export const Timer = ({ seconds = 15 }) => {
 
     events.forEach((event) => window.addEventListener(event, resetTimer));
 
-    resetTimer();
+    const callback: IntersectionObserverCallback = (entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) resetTimer();
+      });
+    };
+
+    const observer = new IntersectionObserver(callback);
+
+    observer.observe(top);
 
     return () => {
       if (timeoutId) clearTimeout(timeoutId);
@@ -41,5 +53,5 @@ export const Timer = ({ seconds = 15 }) => {
     };
   }, [seconds]);
 
-  return <div className="h-0 w-0" id="top"></div>;
+  return <div className="h-0 w-0 opacity-0" id="top"></div>;
 };
