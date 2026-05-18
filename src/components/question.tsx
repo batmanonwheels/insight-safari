@@ -1,37 +1,33 @@
 import Image from "next/image";
-import { randomPhoto } from "@/lib/randomPhoto";
+import { BubblePointer } from "./bubble-pointer";
 
 type QuestionProps = {
   text: string;
+  orientation: "left" | "right";
+  first?: boolean;
 };
 
-export const Question = ({ text }: QuestionProps) => {
-  const bg = randomPhoto();
-
+export const Question = ({ text, orientation, first }: QuestionProps) => {
   return (
-    <section
-      className={`relative min-h-screen min-w-screen flex items-center justify-center snap-center snap-always text-white text-7xl font-bold font-gloriola`}
-    >
-      <Image
-        height={1920}
-        width={1080}
-        src={bg}
-        alt=""
-        className="absolute top-0 bottom-0 w-full h-full -z-30 object-cover bg-[#0C7158]"
-      />
-      <div className="w-3/4 flex flex-col font-bold items-center justify-center bg-[#0C7158] text-white p-15 rounded-2xl outline-10 outline-offset-10">
-        <h2 className="m-auto">{text}</h2>
+    <>
+      <div
+        className={`@container relative w-3/4 h-auto min-w-0 min-h-0 flex flex-col font-bold items-center justify-center bg-[#0C7158] text-white p-15 rounded-4xl outline-10`}
+        id={first ? "first-speech-bubble" : undefined}
+      >
+        <h2 className={`m-auto w-full h-full text-[15cqi]`}>{text}</h2>
+        <BubblePointer orientation={orientation} />
       </div>
-      <div className="absolute left-0 bottom-0 w-screen flex items-center justify-around p-4 opacity-60">
+      <div className="absolute left-0 bottom-0 w-screen flex items-center justify-around p-4 opacity-60 animate-pulse ">
         <Image
           height={1000}
           width={1000}
           src={"/svg/line.svg"}
           alt={"Arrow pointing to the left"}
-          className="w-3/4"
+          className="w-3/4 "
+          loading="eager"
         />
         <p className="w-1/4 text-5xl">SWIPE</p>
       </div>
-    </section>
+    </>
   );
 };

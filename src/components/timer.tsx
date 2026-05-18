@@ -1,11 +1,18 @@
 /** biome-ignore-all lint/suspicious/useIterableCallbackReturn: <explanation> */
 "use client";
-
 import { useEffect } from "react";
 
-export const Timer = ({ seconds = 15 }) => {
+type TimerProps = {
+  seconds?: number;
+};
+
+export const Timer = ({ seconds = 3 }: TimerProps) => {
   useEffect(() => {
     let timeoutId: NodeJS.Timeout;
+    let atTheTop: boolean = true;
+
+    const firstSection: HTMLElement | null = document.querySelector("#timer");
+    if (!firstSection) return;
 
     const resetTimer = () => {
       if (timeoutId) clearTimeout(timeoutId);
@@ -15,11 +22,13 @@ export const Timer = ({ seconds = 15 }) => {
           document.querySelector("#legal");
         if (!modal) return;
         modal.close();
-        document.querySelector("#top")?.scrollIntoView({
-          behavior: "smooth",
-          block: "nearest",
-          inline: "start",
-        });
+        if (!atTheTop) {
+          firstSection.scrollIntoView({
+            behavior: "smooth",
+            block: "nearest",
+            inline: "start",
+          });
+        }
       }, seconds * 1000);
     };
 
@@ -33,6 +42,18 @@ export const Timer = ({ seconds = 15 }) => {
 
     events.forEach((event) => window.addEventListener(event, resetTimer));
 
+    const callback: IntersectionObserverCallback = (entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) {
+          atTheTop = false;
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(callback);
+
+    observer.observe(firstSection);
+
     resetTimer();
 
     return () => {
@@ -41,5 +62,5 @@ export const Timer = ({ seconds = 15 }) => {
     };
   }, [seconds]);
 
-  return <div className="h-0 w-0" id="top"></div>;
+  return <div className="h-0 w-dvw opacity-0 -z-50" id="timer"></div>;
 };
