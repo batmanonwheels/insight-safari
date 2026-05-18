@@ -1,6 +1,5 @@
 /** biome-ignore-all lint/suspicious/useIterableCallbackReturn: <explanation> */
 "use client";
-
 import { useEffect } from "react";
 
 type TimerProps = {
@@ -12,7 +11,7 @@ export const Timer = ({ seconds = 3 }: TimerProps) => {
     let timeoutId: NodeJS.Timeout;
     let atTheTop: boolean = true;
 
-    const firstSection: HTMLElement | null = document.querySelector("#top");
+    const firstSection: HTMLElement | null = document.querySelector("#timer");
     if (!firstSection) return;
 
     const resetTimer = () => {
@@ -63,5 +62,5 @@ export const Timer = ({ seconds = 3 }: TimerProps) => {
     };
   }, [seconds]);
 
-  return <div className="h-0 w-dvw opacity-0 -z-50" id="top"></div>;
+  return <div className="h-0 w-dvw opacity-0 -z-50" id="timer"></div>;
 };

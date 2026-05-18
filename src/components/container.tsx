@@ -4,7 +4,7 @@ import { Modal } from "@/components/modal";
 import { Question } from "@/components/question";
 import { Timer } from "@/components/timer";
 import { Section } from "./section";
-import { Fullscreen } from "./fullscreen";
+import { Splash } from "./splash";
 
 type ContainerProps = {
   questions: string[];
@@ -20,21 +20,26 @@ export const Container = ({
   return (
     <main
       id="container"
-      className=" flex h-dvh w-dvw max-w-dvw max-h-dvh overflow-x-scroll snap-x snap-mandatory font font-gloriola"
+      className=" flex h-dvh w-dvw max-w-dvw max-h-dvh overflow-x-scroll snap-x snap-mandatory font-gloriola"
     >
       <Timer />
-      <Fullscreen />
+
+      <Section type="splash">
+        <Splash text={questions[0]} />
+      </Section>
+
       {questions.map((q, i) => {
         return (
           <Section type="question" key={i + q} first={i === 0}>
             {i % 2 === 0 ? (
-              <Question text={q} orientation={"left"} />
+              <Question text={q} orientation={"left"} first={i === 0} />
             ) : (
               <Question text={q} orientation={"right"} />
             )}
           </Section>
         );
       })}
+
       {explained.map((q, i) => {
         return (
           <Section type="explained" key={i + q}>
@@ -42,6 +47,7 @@ export const Container = ({
           </Section>
         );
       })}
+
       <Modal>
         <Legal />
       </Modal>
