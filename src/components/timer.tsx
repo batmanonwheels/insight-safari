@@ -1,8 +1,14 @@
 /** biome-ignore-all lint/suspicious/useIterableCallbackReturn: <explanation> */
 "use client";
-import { useEffect } from "react";
+
+import { useEffect, useState } from "react";
+import { setTimerDuration } from "@/lib/timerDuration";
 
 type TimerProps = {
+  seconds?: number;
+};
+
+type TimerCounterProps = {
   seconds?: number;
 };
 
@@ -63,4 +69,55 @@ export const Timer = ({ seconds = 3 }: TimerProps) => {
   }, [seconds]);
 
   return <div className="h-0 w-dvw opacity-0 -z-50" id="timer"></div>;
+};
+
+export const TimerCounter = ({ seconds = 10 }: TimerCounterProps) => {
+  const [count, setCount] = useState<number>(seconds);
+
+  const handleCount = (operation: "inc" | "dec") => {
+    const input: HTMLInputElement | null =
+      document.querySelector("input[type=number]");
+
+    if (!input) return;
+
+    let currentCount = count;
+
+    if (operation === "inc") {
+      input.stepUp();
+      currentCount++;
+    } else if (operation === "dec") {
+      input.stepDown();
+      currentCount--;
+    }
+    setCount(currentCount);
+    setTimerDuration(currentCount);
+  };
+
+  return (
+    <div
+      className="h-10 w-30 flex items-center justify-between gap-2 text-2xl"
+      id="timer-counter"
+    >
+      <button
+        type="button"
+        className="h-10 w-10 m-auto text-center border rounded-md"
+        onClick={() => handleCount("dec")}
+      >
+        -
+      </button>
+      <input
+        type="number"
+        name="seconds"
+        className="h-10 w-10 text-center [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
+        defaultValue={count}
+      />
+      <button
+        type="button"
+        className="h-10 w-10 m-auto text-center border rounded-md"
+        onClick={() => handleCount("inc")}
+      >
+        +
+      </button>
+    </div>
+  );
 };
