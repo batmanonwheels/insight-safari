@@ -24,7 +24,7 @@ export const Section = ({ children, type, first }: SectionProps) => {
       id={first ? "first" : undefined}
     >
       {children}
-      <div className="absolute left-0 bottom-0 w-screen flex items-center justify-around p-4 opacity-60 font-gloriola animate-pulse ">
+      <div className="absolute left-0 bottom-0 w-screen flex items-center justify-center p-4 opacity-60 font-gloriola animate-pulse ">
         <Image
           height={1000}
           width={1000}
