@@ -13,7 +13,7 @@ export const ModalToggleOn = () => {
       id="modal-toggle"
       type="button"
       onClick={() => openModal()}
-      className="absolute bottom-16 text-xl p-2.5 bg-[#0C7158] rounded-lg outline-5"
+      className="absolute bottom-16 text-2xl font-bold font-gloriola p-5 bg-[#0C7158] rounded-lg outline-5"
     >
       DISCLAIMER
     </button>
@@ -31,7 +31,7 @@ export const ModalToggleOff = () => {
     <button
       type="button"
       onClick={() => closeModal()}
-      className="text-xl p-1.25 mb-1 outline-5 rounded-lg w-1/2 h-fit mx-auto"
+      className="text-xl p-2 mb-1 font-bold font-gloriola outline-5 rounded-lg w-1/2 h-fit mx-auto"
     >
       CLOSE
     </button>

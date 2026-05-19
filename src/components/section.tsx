@@ -11,7 +11,7 @@ export const Section = ({ children, type, first }: SectionProps) => {
   if (type === "explained")
     return (
       <section
-        className={`relative min-h-screen min-w-screen flex items-center justify-center gap-80 snap-center snap-always text-white outline-offset-4 `}
+        className={`relative min-h-screen min-w-screen flex items-center justify-center gap-80 snap-center snap-always text-white outline-offset-4`}
       >
         {children}
         <ModalToggleOn />
@@ -30,11 +30,11 @@ export const Section = ({ children, type, first }: SectionProps) => {
           width={1000}
           src={"/svg/line.svg"}
           alt={"Arrow pointing to the left"}
-          className="w-5/8"
+          className="w-6/8"
           loading="eager"
           draggable="false"
         />
-        <p className="w-3/8 text-5xl">SWIPE</p>
+        <p className="w-2/8 text-5xl text-center">SWIPE</p>
       </div>
     </section>
   );
