@@ -7,11 +7,10 @@ export const Fullscreen = () => {
 
       if (!document.fullscreenElement) {
         await element.requestFullscreen();
-      } else {
+      } else if (document.fullscreenElement) {
         await document.exitFullscreen();
       }
     } catch (err: any) {
-      handleFullscreen();
       console.error(`Error attempting to toggle fullscreen: ${err.message}`);
     }
   };
