@@ -13,9 +13,9 @@ export const ModalToggleOn = () => {
       id="modal-toggle"
       type="button"
       onClick={() => openModal()}
-      className="absolute bottom-16 text-3xl p-6 bg-[#0C7158] rounded-lg outline-10 outline-offset-10 active:outline-white"
+      className="absolute bottom-16 text-xl p-2.5 bg-[#0C7158] rounded-lg outline-5"
     >
-      Disclaimer
+      DISCLAIMER
     </button>
   );
 };
@@ -31,9 +31,9 @@ export const ModalToggleOff = () => {
     <button
       type="button"
       onClick={() => closeModal()}
-      className="text-2xl p-1 mb-1 outline outline-offset-1 rounded-lg w-1/2 h-fit mx-auto"
+      className="text-xl p-1.25 mb-1 outline-5 rounded-lg w-1/2 h-fit mx-auto"
     >
-      Close
+      CLOSE
     </button>
   );
 };

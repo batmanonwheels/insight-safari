@@ -2,8 +2,12 @@ import Image from "next/image";
 import Link from "next/link";
 import { randomPhoto } from "@/lib/randomPhoto";
 import { Fullscreen } from "@/components/fullscreen";
+import { TimerCounter } from "@/components/timer";
+import { getTimerDuration } from "@/lib/timerDuration";
 
-export default function Home() {
+export default async function Home() {
+  const duration = await getTimerDuration();
+
   const bg = randomPhoto();
 
   return (
@@ -36,7 +40,9 @@ export default function Home() {
           TAX INSIGHTS
         </Link>
       </nav>
+
       <Fullscreen />
+      <TimerCounter seconds={duration ? parseInt(duration, 10) : undefined} />
     </main>
   );
 }
