@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 export default function EquityEducation() {
   const questions: string[] = [
     "How do my stock options work?",
-    "Can I fund college with equity?",
+    "Can I fund my child's college with equity awards?",
   ];
   const explained: string[] = [
     "We have a rich library of guides, videos, glossaries, and webinars that help employees understand stock options, RSUs, ESPPs, and more.",

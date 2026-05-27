@@ -10,7 +10,7 @@ export default function Communications() {
     "Where do I find my tax documents?",
     "When can I exercise my options?",
     "How many shares are vesting in my next vest?",
-    "What are the options for my proceeds?",
+    "How do I transfer out my proceeds?",
   ];
   const explained: string[] = [
     "Answer employee questions by offering timely communications at grant, vest and other key plan moments, plus practical steps.",
