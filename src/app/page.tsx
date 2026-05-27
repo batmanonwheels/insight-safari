@@ -42,7 +42,7 @@ export default async function Home() {
       </nav>
 
       <Fullscreen />
-      <TimerCounter seconds={duration ? parseInt(duration, 10) : undefined} />
+      <TimerCounter seconds={duration ? parseInt(duration, 10) : 10} />
     </main>
   );
 }

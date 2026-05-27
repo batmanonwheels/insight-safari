@@ -1,18 +1,19 @@
 /** biome-ignore-all lint/suspicious/useIterableCallbackReturn: <explanation> */
 "use client";
 
-import { useEffect, useState } from "react";
 import { setTimerDuration } from "@/lib/timerDuration";
+import { Dispatch, SetStateAction, useEffect, useState } from "react";
 
 type TimerProps = {
-  seconds?: number;
+  seconds: number;
+  setReset: Dispatch<SetStateAction<boolean>>;
 };
 
 type TimerCounterProps = {
-  seconds?: number;
+  seconds: number;
 };
 
-export const Timer = ({ seconds = 3 }: TimerProps) => {
+export const Timer = ({ seconds, setReset }: TimerProps) => {
   useEffect(() => {
     let timeoutId: NodeJS.Timeout;
     let atTheTop: boolean = true;
@@ -24,6 +25,7 @@ export const Timer = ({ seconds = 3 }: TimerProps) => {
       if (timeoutId) clearTimeout(timeoutId);
 
       timeoutId = setTimeout(() => {
+        if (timeoutId) clearTimeout(timeoutId);
         const modal: HTMLDialogElement | null =
           document.querySelector("#legal");
         if (!modal) return;
@@ -34,6 +36,12 @@ export const Timer = ({ seconds = 3 }: TimerProps) => {
             block: "nearest",
             inline: "start",
           });
+          timeoutId = setTimeout(
+            () => {
+              setReset(true);
+            },
+            (seconds / 3) * 1000,
+          );
         }
       }, seconds * 1000);
     };
@@ -66,12 +74,12 @@ export const Timer = ({ seconds = 3 }: TimerProps) => {
       if (timeoutId) clearTimeout(timeoutId);
       events.forEach((event) => window.removeEventListener(event, resetTimer));
     };
-  }, [seconds]);
+  }, [seconds, setReset]);
 
   return <div className="h-0 w-dvw opacity-0 -z-50" id="timer"></div>;
 };
 
-export const TimerCounter = ({ seconds = 10 }: TimerCounterProps) => {
+export const TimerCounter = ({ seconds }: TimerCounterProps) => {
   const [count, setCount] = useState<number>(seconds);
 
   const handleCount = (operation: "inc" | "dec") => {
