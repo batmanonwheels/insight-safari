@@ -14,7 +14,7 @@ export default async function Home() {
       <Image
         height={1080}
         width={1920}
-        src={"/backgrounds/ferns-1.webp"}
+        src={"/backgrounds/ferns-2.webp"}
         alt=""
         loading="eager"
         className="absolute top-0 bottom-0 w-full h-full -z-30 object-cover bg-[#0C7158]"
