@@ -13,7 +13,8 @@ export const ModalToggleOn = () => {
       id="modal-toggle"
       type="button"
       onClick={() => openModal()}
-      className="absolute bottom-16 text-2xl font-bold font-gloriola p-5 bg-[#0C7158] rounded-lg outline-5"
+      onTouchStart={() => openModal()}
+      className="absolute bottom-28 right-28 w-1/4 text-2xl font-bold font-gloriola p-5 bg-[#0C7158] rounded-lg outline-5 opacity-0 cursor-pointer"
     >
       DISCLAIMER
     </button>
@@ -31,9 +32,8 @@ export const ModalToggleOff = () => {
     <button
       type="button"
       onClick={() => closeModal()}
-      className="text-xl p-2 mb-1 font-bold font-gloriola outline-5 rounded-lg w-1/2 h-fit mx-auto"
-    >
-      CLOSE
-    </button>
+      onTouchStart={() => closeModal()}
+      className="absolute w-screen h-screen opacity-0 b"
+    ></button>
   );
 };

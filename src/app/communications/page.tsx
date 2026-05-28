@@ -1,28 +1,19 @@
 import type { Metadata } from "next/types";
 import { Container } from "@/components/container";
+import { PhotoContainer } from "@/components/photo-container";
 
 export const metadata: Metadata = {
   title: "Communications | Insight Safari",
 };
 
 export default function Communications() {
-  const questions: string[] = [
-    "Where do I find my tax documents?",
-    "When can I exercise my options?",
-    "How many shares are vesting in my next vest?",
-    "How do I transfer out my proceeds?",
-  ];
-  const explained: string[] = [
-    "Answer employee questions by offering timely communications at grant, vest and other key plan moments, plus practical steps.",
+  const photos: string[] = [
+    "/flows/communications/communications-1.webp",
+    "/flows/communications/communications-2.webp",
+    "/flows/communications/communications-3.webp",
+    "/flows/communications/communications-4.webp",
+    "/flows/communications/communications-5.webp",
   ];
 
-  return (
-    <Container
-      questions={questions}
-      explained={explained}
-      explainedTitle={
-        "OUTREACH DURING KEY MOMENTS OR FEATURING TARGETED FINANCIAL STRATEGIES."
-      }
-    />
-  );
+  return <PhotoContainer photos={photos} />;
 }
