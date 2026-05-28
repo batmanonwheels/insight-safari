@@ -1,5 +1,4 @@
 import type { Metadata } from "next/types";
-import { Container } from "@/components/container";
 import { PhotoContainer } from "@/components/photo-container";
 
 export const metadata: Metadata = {
