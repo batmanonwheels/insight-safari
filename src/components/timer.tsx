@@ -16,7 +16,7 @@ type TimerCounterProps = {
 export const Timer = ({ seconds }: TimerProps) => {
   useEffect(() => {
     let timeoutId: NodeJS.Timeout;
-    let timeoutId2: NodeJS.Timeout;
+    // let timeoutId2: NodeJS.Timeout;
     let atTheTop: boolean = true;
 
     const firstSection: HTMLElement | null = document.querySelector("#timer");
@@ -37,10 +37,10 @@ export const Timer = ({ seconds }: TimerProps) => {
             block: "nearest",
             inline: "start",
           });
-          timeoutId2 = setTimeout(() => {
-            if (timeoutId2) clearTimeout(timeoutId2);
-            // setReset(true);
-          }, 2 * 1000);
+          // timeoutId2 = setTimeout(() => {
+          //   if (timeoutId2) clearTimeout(timeoutId2);
+          //   // setReset(true);
+          // }, 2 * 1000);
         }
       }, seconds * 1000);
     };
@@ -102,7 +102,7 @@ export const TimerCounter = ({ seconds }: TimerCounterProps) => {
 
   return (
     <div className="flex flex-col items-center gap-4 opacity-90">
-      <h4 className="text-3xl">Reset Timer</h4>
+      <h4 className="text-2xl">Timer Duration</h4>
       <div
         className="h-10 w-30 flex items-center justify-between gap-2 text-2xl"
         id="timer-counter"

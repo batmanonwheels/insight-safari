@@ -1,20 +1,20 @@
 "use client";
 
-export const Fullscreen = () => {
-  const handleFullscreen = async () => {
-    try {
-      const element = document.documentElement;
+export const handleFullscreen = async () => {
+  try {
+    const element = document.documentElement;
 
-      if (!document.fullscreenElement) {
-        await element.requestFullscreen();
-      } else if (document.fullscreenElement) {
-        await document.exitFullscreen();
-      }
-    } catch (err: any) {
-      console.error(`Error attempting to toggle fullscreen: ${err.message}`);
+    if (!document.fullscreenElement) {
+      await element.requestFullscreen();
+    } else if (document.fullscreenElement) {
+      await document.exitFullscreen();
     }
-  };
+  } catch (err: any) {
+    console.error(`Error attempting to toggle fullscreen: ${err.message}`);
+  }
+};
 
+export const Fullscreen = () => {
   return (
     // biome-ignore lint/a11y/noStaticElementInteractions: <explanation>
     // biome-ignore lint/a11y/useKeyWithClickEvents: <explanation>
@@ -22,7 +22,6 @@ export const Fullscreen = () => {
       className="h-10 w-auto flex items-center gap-6 opacity-75"
       id="fullscreen"
       onClick={() => handleFullscreen()}
-      onTouchStart={() => handleFullscreen()}
     >
       <h1 className="text-2xl">Toggle Fullscreen</h1>
       <svg

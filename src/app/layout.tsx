@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import localFont from "next/font/local";
 import "./globals.css";
+import { SerwistProvider } from "@serwist/turbopack/react";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -37,8 +38,22 @@ const gloriola = localFont({
 
 export const metadata: Metadata = {
   title: "Insight Safari",
+  applicationName: "Insight Safari",
   openGraph: {
+    type: "website",
     images: "/public/backgrounds/ferns-1.webp",
+    siteName: "Insight Safari",
+    title: "Insight Safari",
+  },
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: "default",
+    title: "Insight Safari",
+    startupImage: "/public/backgrounds/ferns-1.webp",
+  },
+  twitter: {
+    card: "summary",
+    title: "Insight Safari",
   },
 };
 
@@ -53,7 +68,7 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} ${gloriola.variable} h-full antialiased`}
     >
       <body className="min-h-full min-w-full flex flex-col bg-green-800 transition-all">
-        {children}
+        <SerwistProvider swUrl="/serwist/sw.js">{children}</SerwistProvider>
       </body>
     </html>
   );
