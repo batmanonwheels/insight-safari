@@ -55,6 +55,9 @@ export const metadata: Metadata = {
     card: "summary",
     title: "Insight Safari",
   },
+  formatDetection: {
+    telephone: false,
+  },
 };
 
 export default function RootLayout({
@@ -68,7 +71,7 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} ${gloriola.variable} h-full antialiased`}
     >
       <body className="min-h-full min-w-full flex flex-col bg-green-800 transition-all">
-        <SerwistProvider swUrl="/serwist/sw.js">{children}</SerwistProvider>
+        <SerwistProvider swUrl="/sw.js">{children}</SerwistProvider>
       </body>
     </html>
   );
