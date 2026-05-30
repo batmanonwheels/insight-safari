@@ -25,7 +25,37 @@ const serwist = new Serwist({
 	fallbacks: {
 		entries: [
 			{
-				url: '/~offline',
+				url: '/',
+				matcher({ request }) {
+					return request.destination === 'document';
+				},
+			},
+			{
+				url: '/communications',
+				matcher({ request }) {
+					return request.destination === 'document';
+				},
+			},
+			{
+				url: '/equity-education',
+				matcher({ request }) {
+					return request.destination === 'document';
+				},
+			},
+			{
+				url: '/financial-wellness',
+				matcher({ request }) {
+					return request.destination === 'document';
+				},
+			},
+			{
+				url: '/platform-support',
+				matcher({ request }) {
+					return request.destination === 'document';
+				},
+			},
+			{
+				url: '/tax-insights',
 				matcher({ request }) {
 					return request.destination === 'document';
 				},
