@@ -23,7 +23,7 @@ export default async function Home() {
 
       <Nav />
 
-      <Fullscreen />
+      {/* <Fullscreen /> */}
       <TimerCounter seconds={duration ? parseInt(duration, 10) : 10} />
     </main>
   );
