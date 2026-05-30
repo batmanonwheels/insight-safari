@@ -1,24 +1,17 @@
 import type { Metadata } from "next/types";
-import { Container } from "@/components/container";
+
+import { PhotoContainer } from "@/components/photo-container";
 
 export const metadata: Metadata = {
   title: "Equity Education | Insight Safari",
 };
 
 export default function EquityEducation() {
-  const questions: string[] = [
-    "How do my stock options work?",
-    "Can I fund college with equity?",
-  ];
-  const explained: string[] = [
-    "We have a rich library of guides, videos, glossaries, and webinars that help employees understand stock options, RSUs, ESPPs, and more.",
+  const photos: string[] = [
+    "/flows/equity-education/equity-education-1.webp",
+    "/flows/equity-education/equity-education-2.webp",
+    "/flows/equity-education/equity-education-3.webp",
   ];
 
-  return (
-    <Container
-      questions={questions}
-      explained={explained}
-      explainedTitle={"EQUITY, EXPLAINED."}
-    />
-  );
+  return <PhotoContainer photos={photos} />;
 }

@@ -1,19 +1,40 @@
+import Image from "next/image";
+
 import { ModalToggleOff } from "./modal-toggle";
 
 export const Modal = ({ children }: { children: React.ReactNode }) => {
   return (
     <dialog
       id="legal"
-      className={`mx-auto my-auto h-3/4 w-3/4 bg-[#0C7158] text-white p-5 rounded-2xl outline-10 backdrop:bg-[#0C7158] backdrop:opacity-80`}
+      className={`relative min-h-screen min-w-screen bg-transparent backdrop:opacity-35 backdrop:backdrop-blur-2xl`}
       closedby="closerequest"
       open={false}
     >
-      <div
-        className={`flex flex-col gap-2 justify-between overflow-scroll h-full`}
-      >
-        {children}
-        <ModalToggleOff />
-      </div>
+      <Image
+        height={1920}
+        width={1080}
+        alt="Safari background"
+        src={"/backgrounds/ferns-4.webp"}
+        className="h-0 w-0"
+      />
+      {children}
+      <ModalToggleOff />
     </dialog>
   );
 };
+
+// import { ModalToggleOff } from "./modal-toggle";
+
+// export const Modal = ({ children }: { children: React.ReactNode }) => {
+//   return (
+//     <dialog
+//       id="legal"
+//       className={`relative min-h-screen min-w-screen bg-none backdrop:bg-none`}
+//       closedby="closerequest"
+//       open={false}
+//     >
+//       {/* {children} */}
+//       {/* <ModalToggleOff /> */}
+//     </dialog>
+//   );
+// };

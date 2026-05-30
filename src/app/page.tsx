@@ -1,14 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
-import { randomPhoto } from "@/lib/randomPhoto";
 import { Fullscreen } from "@/components/fullscreen";
 import { TimerCounter } from "@/components/timer";
 import { getTimerDuration } from "@/lib/timerDuration";
 
 export default async function Home() {
   const duration = await getTimerDuration();
-
-  const bg = randomPhoto();
 
   return (
     <main
@@ -17,7 +14,7 @@ export default async function Home() {
       <Image
         height={1080}
         width={1920}
-        src={bg}
+        src={"/backgrounds/ferns-2.webp"}
         alt=""
         loading="eager"
         className="absolute top-0 bottom-0 w-full h-full -z-30 object-cover bg-[#0C7158]"
@@ -42,7 +39,7 @@ export default async function Home() {
       </nav>
 
       <Fullscreen />
-      <TimerCounter seconds={duration ? parseInt(duration, 10) : undefined} />
+      <TimerCounter seconds={duration ? parseInt(duration, 10) : 10} />
     </main>
   );
 }

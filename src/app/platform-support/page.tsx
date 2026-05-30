@@ -1,24 +1,16 @@
 import type { Metadata } from "next/types";
-import { Container } from "@/components/container";
+import { PhotoContainer } from "@/components/photo-container";
 
 export const metadata: Metadata = {
   title: "Platform Support | Insight Safari",
 };
 
 export default function PlatformSupport() {
-  const questions: string[] = [
-    "How do I log in?",
-    "Can I see all my accounts in one place?",
-  ];
-  const explained: string[] = [
-    "How-to guides, videos, navigation support, live webinars, and even company-specific sessions make managing accounts simple.",
+  const photos: string[] = [
+    "/flows/platform-support/platform-support-1.webp",
+    "/flows/platform-support/platform-support-2.webp",
+    "/flows/platform-support/platform-support-3.webp",
   ];
 
-  return (
-    <Container
-      questions={questions}
-      explained={explained}
-      explainedTitle={"KNOW THE TOOLS. USE THEM WELL."}
-    />
-  );
+  return <PhotoContainer photos={photos} />;
 }
