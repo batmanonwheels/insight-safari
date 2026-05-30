@@ -9,8 +9,8 @@ export const Nav = () => {
       <Link href="/equity-education" replace onClick={() => handleFullscreen()}>
         EQUITY EDUCATION
       </Link>
-      <Link href="/communications" replace onClick={() => handleFullscreen()}>
-        COMMUNICATIONS
+      <Link href="/tax-insights" replace onClick={() => handleFullscreen()}>
+        TAX INSIGHTS
       </Link>
       <Link
         href="/financial-wellness"
@@ -19,11 +19,12 @@ export const Nav = () => {
       >
         FINANCIAL WELLNESS
       </Link>
+      <Link href="/communications" replace onClick={() => handleFullscreen()}>
+        COMMUNICATIONS
+      </Link>
+
       <Link href="/platform-support" replace onClick={() => handleFullscreen()}>
         PLATFORM SUPPORT
-      </Link>
-      <Link href="/tax-insights" replace onClick={() => handleFullscreen()}>
-        TAX INSIGHTS
       </Link>
     </nav>
   );
