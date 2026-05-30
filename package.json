@@ -1,38 +1,38 @@
 {
-  "name": "insight-safari",
-  "version": "0.1.0",
-  "private": true,
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "biome check",
-    "format": "biome format --write"
-  },
-  "dependencies": {
-    "next": "16.2.4",
-    "react": "19.2.4",
-    "react-dom": "19.2.4"
-  },
-  "devDependencies": {
-    "@biomejs/biome": "2.2.0",
-    "@serwist/turbopack": "^9.5.11",
-    "@tailwindcss/postcss": "^4.2.4",
-    "@types/node": "^20.19.40",
-    "@types/react": "^19.2.14",
-    "@types/react-dom": "^19.2.3",
-    "babel-plugin-react-compiler": "1.0.0",
-    "esbuild": "^0.28.0",
-    "serwist": "^9.5.11",
-    "tailwindcss": "^4.2.4",
-    "typescript": "^5.9.3"
-  },
-  "ignoreScripts": [
-    "sharp",
-    "unrs-resolver"
-  ],
-  "trustedDependencies": [
-    "sharp",
-    "unrs-resolver"
-  ]
+	"name": "insight-safari",
+	"version": "0.1.0",
+	"private": true,
+	"scripts": {
+		"dev": "concurrently -p none 'serwist build --watch' 'next dev'",
+		"dev:once": "cross-env NODE_ENV=development serwist build && next dev",
+		"build": "next build && serwist build"
+	},
+	"dependencies": {
+		"next": "16.2.4",
+		"react": "19.2.4",
+		"react-dom": "19.2.4"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "2.2.0",
+		"@serwist/cli": "^9.5.11",
+		"@serwist/next": "^9.5.11",
+		"@tailwindcss/postcss": "^4.2.4",
+		"@types/node": "^20.19.40",
+		"@types/react": "^19.2.14",
+		"@types/react-dom": "^19.2.3",
+		"babel-plugin-react-compiler": "1.0.0",
+		"concurrently": "^10.0.0",
+		"esbuild": "^0.28.0",
+		"serwist": "^9.5.11",
+		"tailwindcss": "^4.2.4",
+		"typescript": "^5.9.3"
+	},
+	"ignoreScripts": [
+		"sharp",
+		"unrs-resolver"
+	],
+	"trustedDependencies": [
+		"sharp",
+		"unrs-resolver"
+	]
 }

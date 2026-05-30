@@ -14,5 +14,5 @@ export default withSerwist({
 	// Your Next.js configuration
 	reactCompiler: true,
 	allowedDevOrigins: ['192.168.8.106'],
-	devIndicators: false,
+	// devIndicators: false,
 });
