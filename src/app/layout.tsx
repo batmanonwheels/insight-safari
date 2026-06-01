@@ -58,7 +58,9 @@ export const metadata: Metadata = {
   formatDetection: {
     telephone: false,
   },
+  themeColor: "#0C7158",
 };
+
 export const viewport: Viewport = {
   themeColor: "#0C7158",
 };
