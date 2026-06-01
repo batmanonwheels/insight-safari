@@ -71,7 +71,9 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} ${gloriola.variable} h-full antialiased`}
     >
       <body className="min-h-full min-w-full flex flex-col bg-green-800 transition-all">
-        <SerwistProvider swUrl="/sw.js">{children}</SerwistProvider>
+        <SerwistProvider swUrl="/sw.js" cacheOnNavigation={true}>
+          {children}
+        </SerwistProvider>
       </body>
     </html>
   );
