@@ -25,6 +25,12 @@ const serwist = new Serwist({
 	fallbacks: {
 		entries: [
 			{
+				url: '/~offline',
+				matcher({ request }) {
+					return request.destination === 'document';
+				},
+			},
+			{
 				url: '/',
 				matcher({ request }) {
 					return request.destination === 'document';

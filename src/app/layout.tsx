@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import localFont from "next/font/local";
 import "./globals.css";
@@ -59,6 +59,9 @@ export const metadata: Metadata = {
     telephone: false,
   },
 };
+export const viewport: Viewport = {
+  themeColor: "#0C7158",
+};
 
 export default function RootLayout({
   children,
@@ -68,10 +71,11 @@ export default function RootLayout({
   return (
     <html
       lang="en"
+      dir="ltr"
       className={`${geistSans.variable} ${geistMono.variable} ${gloriola.variable} h-full antialiased`}
     >
       <body className="min-h-full min-w-full flex flex-col bg-green-800 transition-all">
-        <SerwistProvider swUrl="/sw.js" cacheOnNavigation={true}>
+        <SerwistProvider swUrl="/serwist/sw.js" cacheOnNavigation={true}>
           {children}
         </SerwistProvider>
       </body>
